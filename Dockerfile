@@ -1,14 +1,16 @@
 # syntax=docker/dockerfile:1.7
 
 # ============================================================
-# Etapa 1: Instalación de dependencias
+# Etapa 1: Instalación de dependencias (sin postinstall)
 # ============================================================
 FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-RUN npm ci
+# --ignore-scripts: skip fumadocs-mdx postinstall here.
+# It needs next.config.* (not yet copied) and runs again in builder.
+RUN npm ci --ignore-scripts
 
 # ============================================================
 # Etapa 2: Build de la aplicación
@@ -27,6 +29,10 @@ ENV NEXT_TELEMETRY_DISABLED=1
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+# Now that next.config.mjs + source.config.ts + content/ are present,
+# run the fumadocs-mdx postinstall so it picks the Next.js adapter.
+RUN node node_modules/fumadocs-mdx/bin.js
 
 RUN npm run build
 
