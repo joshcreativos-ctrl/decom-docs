@@ -1,9 +1,42 @@
+# Dependencies
 node_modules
+npm-debug.log*
+
+# Next.js
 .next
-.git
+out
+
+# Production
+build
+dist
+
+# Environment files (no leak secrets into image)
 .env.local
 .env*.local
-README.md
+
+# Git
+.git
+.gitignore
+
+# Docker
 Dockerfile
+docker-compose.yml
 .dockerignore
-*.md
+
+# Editor/OS
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Test & coverage
+coverage
+*.log
+
+# Build artifacts
+*.tsbuildinfo
+next-env.d.ts
+.source
+
+# Documentation (no needed inside image)
+README.md

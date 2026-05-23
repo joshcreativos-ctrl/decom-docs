@@ -1,9 +1,21 @@
-version: '3.8'
 services:
   docs:
-    build: .
+    container_name: decom-docs
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_GPT_CUSTOM_URL: ${NEXT_PUBLIC_GPT_CUSTOM_URL}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL}
+        NEXT_PUBLIC_SITE_NAME: ${NEXT_PUBLIC_SITE_NAME}
     ports:
       - "3000:3000"
     env_file:
       - .env.local
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
