@@ -1,0 +1,124 @@
+---
+title: 5. Iteración
+description: Cómo ajustar el output con criterio cuando algo no salió bien.
+---
+
+# Paso 5: Iteración
+
+Tu pieza falló alguno de los 5 puntos de verificación. **No es problema**. Iterar es parte del proceso. Aquí está cómo hacerlo con criterio.
+
+---
+
+## Aplica el método 3-3-1
+
+Antes de cambiar nada, aplica la regla aprendida en [El método 3-3-1](/docs/03-hablarle-ia/iteracion):
+
+<Steps>
+
+<Step>
+
+### Primero: 3 veces el mismo prompt
+
+A veces es lotería. Pídele a la IA: *"Genera otra variación con el mismo estilo"* o simplemente repite el prompt. Hasta 3 veces.
+
+</Step>
+
+<Step>
+
+### Si no mejora: modifica el prompt
+
+Cambia las palabras según el problema (ver tabla abajo).
+
+</Step>
+
+<Step>
+
+### Si sigue mal: cambia los referentes
+
+Si después de 6 intentos no funciona, el problema **no son las palabras**. Son los referentes. Vuelve al Paso 1 y busca otros.
+
+</Step>
+
+</Steps>
+
+---
+
+## Tabla de iteración (qué decir según el problema)
+
+| Problema | Frase para añadir al prompt |
+|---|---|
+| **Texto mal escrito** | "Mantén la composición pero corrige el texto a: [texto exacto]" |
+| **Manos / dedos raros** | "Anatomía perfecta de manos, 5 dedos naturales por mano" |
+| **Logo deformado** | "Usa el logo adjunto sin modificarlo, mantén proporciones originales" |
+| **Demasiado saturado** | "Paleta más sobria, colores muted, menos saturación" |
+| **Muy lleno, sin aire** | "Más espacio en blanco, composición más minimalista" |
+| **Tipografía rara** | "Tipografía limpia, sans-serif moderno o serif editorial" |
+| **Demasiado oscuro** | "Más luz, paleta luminosa, fondo más claro" |
+| **Demasiado claro** | "Paleta más oscura, mood dramático, fondo profundo" |
+| **Cara genérica** | "Persona con rasgos específicos: [describir]" |
+| **Composición aburrida** | "Composición asimétrica con jerarquía clara" |
+| **No respeta el estilo** | "Sigue más de cerca el estilo visual de las imágenes adjuntas" |
+| **Falta info** | "Asegúrate de incluir todo el texto: [listar lo que falta]" |
+
+---
+
+## El truco del "casi pero..."
+
+Cuando una generación está **casi bien pero tiene UN detalle mal**, no descartes la imagen entera. Usa este prompt mágico:
+
+```
+Mantén exactamente esta composición, paleta y estilo, pero 
+corrige [el problema específico]
+```
+
+Esto le dice a la IA: "no cambies lo que está bien, solo arregla lo que está mal".
+
+---
+
+## Cuándo cambiar de estrategia
+
+| Síntoma | Acción |
+|---|---|
+| Llevo 3 intentos con mismo prompt y nada mejora | Modifica el prompt |
+| Llevo 6 intentos y sigue mal | Cambia los referentes |
+| Llevo 10 intentos y nada | Vuelve al Paso 1 (replantea brief) |
+| El resultado siempre tiene el mismo error | El brief tiene una contradicción |
+| La IA "no entiende" lo que quiero | Usa más referentes visuales, menos texto |
+
+---
+
+## Cuando es momento de aceptar
+
+A veces el resultado no es perfecto, pero pasa los 5 puntos de verificación y comunica bien. **Está bien.**
+
+<Callout type="info">
+La perfección es enemigo del bueno. Si tu pieza:
+- Comunica el mensaje claramente
+- Cumple los 5 puntos de verificación
+- Se ve profesional
+- Tiene el mood correcto
+
+**Compártela.** No te quedes 2 horas iterando para una mejora del 5%.
+</Callout>
+
+---
+
+## Post-iteración: el toque humano
+
+Cuando ya tengas la versión final, considera estos retoques manuales en Canva o Figma:
+
+- **Reemplazar texto generado** por texto real con tipografía exacta
+- **Insertar logos vectoriales** sobre logos generados
+- **Ajustar paleta** con filtros sutiles
+- **Añadir margen extra** si la pieza se ve apretada
+- **Recortar para diferentes formatos** (cuadrado, vertical, horizontal)
+
+Estos retoques toman 5-10 minutos y elevan la pieza de "bien" a "excelente".
+
+---
+
+## Frase para llevarte a casa
+
+> **La IA genera. Tú decides. La iteración es donde vive el oficio.**
+
+![Paso 5](/images/slides/4-5-iteracion.svg)
